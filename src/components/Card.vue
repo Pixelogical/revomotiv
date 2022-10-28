@@ -1,5 +1,5 @@
 <template>
-  <div :class="hello">
+  <div :class="hello" v-on:dblclick="like()">
     <h1>{{ test.content }}</h1>
 
     <button v-if="!isLiked" v-on:click="increase()" class="plus" :disabled="!loggedIn">+</button>
@@ -12,9 +12,6 @@
 </template>
 
 <script>
-import { firebaseApp, db, collection, getDocs, doc, onSnapshot } from '../firebaseConfig'
-import { query, where, getDoc, setDoc, updateDoc } from "firebase/firestore";
-import { async } from '@firebase/util';
 
 export default {
   name: 'Card',
@@ -56,7 +53,7 @@ export default {
     }
   },
   methods: {
-    increase: async function () {
+    increase: function () {
 
       if (!this.isLiked) {
         this.test.like += 1
@@ -66,7 +63,7 @@ export default {
       //asas
       // this.$store.commit("changeVote", this.$store.getters.getTotalVotes + 1)
     },
-    decrease: async function () {
+    decrease: function () {
       if (this.isLiked) {
         this.test.like -= 1
         this.$store.state.user.liked = this.$store.state.user.liked.filter(item => item != this.test.id)
@@ -74,17 +71,40 @@ export default {
       }
     },
 
-    updateLike: async function () {
-      const post = doc(db, "posts", this.test.id);
-      await updateDoc(post, {
-        like: this.test.like
-      });
-      const user = doc(db, "users", this.$store.state.user.id);
-      await updateDoc(user, {
-        liked: this.$store.state.user.liked
-      });
-      console.log('done');
+    updateLike: function () {
+      // let post = await fetch(' http://192.168.1.103:3000/posts/' + this.test.id, {
+      //   method: 'GET',
+      // }).then(response => response.json())
 
+      // update post likes :
+
+
+      fetch(' http://192.168.1.103:3000/posts/' + this.test.id, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          like: this.test.like,
+        })
+      }).then(
+        // update user liked
+        fetch(' http://192.168.1.103:3000/users/' + this.$store.state.user.id, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            liked: this.$store.state.user.liked,
+          })
+        })
+      )
+      // this.$store.commit('updatePost', this.test)
+
+
+    },
+    like: function () {
+      alert("sdsd")
     }
   }
 }

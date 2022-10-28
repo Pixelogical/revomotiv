@@ -1,0 +1,102 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "content": "json-server",
+      "like": 0
+    },
+    {
+      "id": "3c02546f-11c9-46cc-8a59-09ee4227de73",
+      "content": "F",
+      "like": 0
+    },
+    {
+      "id": "499e2f01-5a68-4783-a1dd-2c1c646730f7",
+      "content": "Vue.version",
+      "like": 0
+    },
+    {
+      "id": "9bf52a3a-50b0-40cf-99ef-53d794b41b73",
+      "content": "Vue.versiongcf",
+      "like": 0
+    },
+    {
+      "id": "d48e8ccb-4bc6-4909-b1f4-6a39d524afed",
+      "content": "Vbhcx",
+      "like": 0
+    },
+    {
+      "id": "f4aaa772-da6b-4c66-9228-0ff3e8723496",
+      "content": "Zan",
+      "like": 0
+    }
+  ],
+  "users": [
+    {
+      "id": "3304ab3a-1349-4f1b-be08-a22855b577ac",
+      "name": "saeed",
+      "password": "saeed",
+      "liked": [],
+      "posts": []
+    },
+    {
+      "id": "4073d690-82df-4d90-9e2b-b1690e5e2006",
+      "name": "1234",
+      "password": "1234",
+      "liked": [
+        "2367b87c-2476-4ac5-b361-dccf41c48ce3",
+        "df78a287-cf5d-4318-9a93-79ec8642930f",
+        "55719440-35e0-48cf-9438-50f1ca6ef017"
+      ],
+      "posts": []
+    },
+    {
+      "id": "0fc426de-cbcf-465c-8f4d-9a101f5db7fa",
+      "name": "Saeed",
+      "password": "sa1233",
+      "liked": []
+    },
+    {
+      "id": "df5d5170-1ebf-4f37-b416-018973f251f4",
+      "name": "Saeed",
+      "password": "sa1233",
+      "liked": []
+    },
+    {
+      "id": "8dc4c71d-4d28-4ab7-8aff-7c623fb194e9",
+      "name": "Saeed",
+      "password": "sa1233",
+      "liked": []
+    },
+    {
+      "id": "e1124df2-1e05-4599-b085-98f2657715f8",
+      "name": "Saeed",
+      "password": "sa1233",
+      "liked": []
+    },
+    {
+      "id": "00964526-0fa6-4bc7-af5f-fb99f4e46fc0",
+      "name": "Saeed",
+      "password": "sa1233",
+      "liked": []
+    },
+    {
+      "id": "e0186870-2986-4132-b47f-d46ed055538b",
+      "name": "Saeed",
+      "password": "sa1233",
+      "liked": []
+    },
+    {
+      "id": "3846e877-dae0-49e0-8c1f-116c95f59b52",
+      "name": "Saeed",
+      "password": "sa1233",
+      "liked": []
+    },
+    {
+      "id": "67a8907d-d2af-4773-9f4f-1c96897c071d",
+      "name": "Saeed",
+      "password": "sa1233",
+      "liked": []
+    }
+  ]
+}

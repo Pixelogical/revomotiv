@@ -2,12 +2,13 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-      totalVotes: 0,
-      user : {
-        name : "",
-        liked : [],
-        id : ""
-      },
+    totalVotes: 0,
+    user: {
+      name: "",
+      liked: [],
+      id: "",
+    },
+    posts: []
   },
   getters: {
     getTotalVotes: (state) => {
@@ -24,7 +25,18 @@ export default createStore({
     fetchUser(state, user) {
       state.user = user;
     },
+    updatePosts(state, posts) {
+      state.posts = posts;
+    },
+    updatePost(state, post) {
+        // console.log("asasas")
+        // for (let i = 0; i < state.posts.length; i++) {
+        //     if (state.posts[i].id == post.id){
+        //         state.posts[i].like = post.like
+        //         break
+        //     }
+        // }
+    },
   },
   actions: {},
 });
-
